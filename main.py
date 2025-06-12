@@ -5,7 +5,7 @@ from crud import get_users, create_user, get_user, delete_user, upload_file_to_s
 app = FastAPI()
 
 @app.get("/")
-def list_users(limit: int = 10):
+def list_users(limit: int = 20):
     return get_users(limit)
 
 @app.post("/users/")
