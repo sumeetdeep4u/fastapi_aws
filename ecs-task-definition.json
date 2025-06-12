@@ -5,7 +5,7 @@
   "containerDefinitions": [
     {
       "name": "fastapi-github-actions-c1",
-      "image": "149831571207.dkr.ecr.<region>.amazonaws.com/fastapi-github-actions:latest",
+      "image": "149831571207.dkr.ecr.ap-south-1.amazonaws.com/fastapi-github-actions:latest",
       "portMappings": [
         {
           "containerPort": 80,
