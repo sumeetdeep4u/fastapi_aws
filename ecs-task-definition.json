@@ -4,7 +4,7 @@
   "executionRoleArn": "arn:aws:iam::149831571207:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
-      "name": "fastapi-container",
+      "name": "fastapi-github-actions-c1",
       "image": "149831571207.dkr.ecr.<region>.amazonaws.com/fastapi-github-actions:latest",
       "portMappings": [
         {
