@@ -8,7 +8,7 @@
       "image": "149831571207.dkr.ecr.ap-south-1.amazonaws.com/fastapi-github-actions:latest",
       "portMappings": [
         {
-          "containerPort": 8001,
+          "containerPort": 80,
           "protocol": "tcp"
         }
       ],
