@@ -1,0 +1,23 @@
+{
+  "family": "fastapi-github-actions-td",
+  "networkMode": "awsvpc",
+  "executionRoleArn": "arn:aws:iam::149831571207:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "fastapi-container",
+      "image": "149831571207.dkr.ecr.<region>.amazonaws.com/fastapi-github-actions:latest",
+      "portMappings": [
+        {
+          "containerPort": 80,
+          "protocol": "tcp"
+        }
+      ],
+      "essential": true
+    }
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512"
+}
