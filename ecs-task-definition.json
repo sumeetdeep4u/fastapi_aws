@@ -1,14 +1,14 @@
 {
-  "family": "CdkFastapiFargateStackMyFastapiFargateServiceTaskDef8EDC39E6",
+  "family": "my-github-app-task-definition",
   "networkMode": "awsvpc",
   "executionRoleArn": "arn:aws:iam::149831571207:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
-      "name": "web",
+      "name": "my-github-app-task-definition",
       "image": "149831571207.dkr.ecr.ap-south-1.amazonaws.com/fastapi-github-actions:latest",
       "portMappings": [
         {
-          "containerPort": 80,
+          "containerPort": 8001,
           "protocol": "tcp"
         }
       ],

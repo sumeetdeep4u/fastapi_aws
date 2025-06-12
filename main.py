@@ -4,6 +4,10 @@ from crud import get_users, create_user, get_user, delete_user, upload_file_to_s
 
 app = FastAPI()
 
+@app.get("/health")
+def read_root():
+    return {"message": "Health check passed"}
+
 @app.get("/")
 def list_users(limit: int = 10):
     return get_users(limit)
