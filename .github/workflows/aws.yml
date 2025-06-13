@@ -31,7 +31,7 @@ on:
     branches: [ "main" ]
 
 env:
-  AWS_REGION: ap-south-1                   # set this to your preferred AWS region, e.g. us-west-1
+  AWS_REGION: ap-south-1                        # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: fastapi-github-repo           # set this to your Amazon ECR repository name
   ECS_SERVICE: fastapi-github-task-definition-service                # set this to your Amazon ECS service name
   ECS_CLUSTER: fastapi-github-cluster                 # set this to your Amazon ECS cluster name
@@ -79,7 +79,7 @@ jobs:
         
         IMAGE_NAME=$ECR_REGISTRY/$ECR_REPOSITORY
         docker build -t $IMAGE_NAME:$IMAGE_TAG -t $IMAGE_NAME:latest .
-        #docker push $IMAGE_NAME:$IMAGE_TAG
+        docker push $IMAGE_NAME:$IMAGE_TAG
         docker push $IMAGE_NAME:latest
         echo "image=$IMAGE_NAME:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
