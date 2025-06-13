@@ -1,11 +1,11 @@
 {
-  "family": "my-fargate-task-definition",
+  "family": "fastapi-github-task-definition",
   "networkMode": "awsvpc",
   "executionRoleArn": "arn:aws:iam::149831571207:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
-      "name": "my-fargate-task-definition-container",
-      "image": "149831571207.dkr.ecr.ap-south-1.amazonaws.com/my-github-app-repo:latest",
+      "name": "fastapi-github-task-definition-container",
+      "image": "149831571207.dkr.ecr.ap-south-1.amazonaws.com/fastapi-github-repo:latest:latest",
       "portMappings": [
         {
           "containerPort": 80,
@@ -16,7 +16,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
-          "awslogs-group": "/ecs/my-fargate-task-definition",
+          "awslogs-group": "/ecs/fastapi-github-task-definition",
           "awslogs-region": "ap-south-1",
           "awslogs-stream-prefix": "ecs"
         }
