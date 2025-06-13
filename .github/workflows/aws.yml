@@ -79,7 +79,7 @@ jobs:
         
         IMAGE_NAME=$ECR_REGISTRY/$ECR_REPOSITORY
         docker build -t $IMAGE_NAME:$IMAGE_TAG -t $IMAGE_NAME:latest .
-        docker push $IMAGE_NAME:$IMAGE_TAG
+        #docker push $IMAGE_NAME:$IMAGE_TAG
         docker push $IMAGE_NAME:latest
         echo "image=$IMAGE_NAME:$IMAGE_TAG" >> $GITHUB_OUTPUT
 
