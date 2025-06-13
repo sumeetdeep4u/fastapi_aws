@@ -1,23 +1,44 @@
 {
-  "family": "my-github-app-task-definition",
+  "family": "my-fargate-task-definition",
   "networkMode": "awsvpc",
   "executionRoleArn": "arn:aws:iam::149831571207:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
-      "name": "my-github-app-task-definition",
-      "image": "149831571207.dkr.ecr.ap-south-1.amazonaws.com/fastapi-github-actions:latest",
+      "name": "my-fargate-task-definition-container",
+      "image": "149831571207.dkr.ecr.ap-south-1.amazonaws.com/my-github-app-repo:latest",
       "portMappings": [
         {
-          "containerPort": 8001,
+          "containerPort": 80,
           "protocol": "tcp"
         }
       ],
-      "essential": true
+      "essential": true,
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/my-fargate-task-definition",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      },
+      "healthCheck": {
+        "command": [
+          "CMD-SHELL",
+          "curl -f http://localhost/ || exit 1"
+        ],
+        "interval": 30,
+        "timeout": 5,
+        "retries": 3,
+        "startPeriod": 10
+      }
     }
   ],
   "requiresCompatibilities": [
     "FARGATE"
   ],
   "cpu": "256",
-  "memory": "512"
+  "memory": "512",
+  "runtimePlatform": {
+    "operatingSystemFamily": "LINUX"
+  }
 }
